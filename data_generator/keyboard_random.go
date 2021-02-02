@@ -9,7 +9,6 @@ import (
 func randomKeyboardlayout() pb.Keyboard_Layout {
 
 	switch rand.Intn(4) {
-
 	case 0:
 		return pb.Keyboard_UNKNOWN
 	case 1:
