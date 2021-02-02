@@ -1,7 +1,7 @@
 syntax="proto3";
 
 package pcbook;
-option go_package="pb";
+option go_package=".;pb";
 
 message Screen {
     message Resolution {

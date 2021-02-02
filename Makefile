@@ -1,10 +1,36 @@
-gen: 
-	protoc --proto_path=./protos ./protos/*.proto --go_out=plugins=grpc:pb
-
-# clean: 
-# 	rm pb/*.go
-clean:
-	del pb\*.go
-
+#-----------------------------------------------------------
+# Mac OS, Unix, Linux
+#-----------------------------------------------------------
 run: 
 	go run main.go
+
+# Generate Server 
+# consume we run command in the *.proto file directory 
+gen-server:
+	protoc  --go_out=./pb --go_opt=paths=source_relative --go-grpc_out=./pb --go-grpc_opt=paths=source_relative --proto_path=./protos ./protos/*.proto
+
+# Generate Client 
+gen-client:
+	protoc --go_out=pb --go_opt=paths=source_relative     --go-grpc_out=pb --go-grpc_opt=paths=source_relative    client.proto 
+
+
+
+# for macOS
+clean: 
+	rm pb/*.go
+
+
+# -------------------------------------------------------------------------
+# Windows section
+# -------------------------------------------------------------------------
+
+# Generate protobuffer 
+gen-win: 
+	protoc --proto_path=./protos ./protos/*.proto --go_out=./pb
+
+# Delete command line 
+del:
+	del pb\*.go
+
+
+
