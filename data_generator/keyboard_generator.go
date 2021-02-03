@@ -6,6 +6,7 @@ import "github.com/psinthorn/gostore/pb"
 func NewKeyboard() *pb.Keyboard {
 	keyboard := &pb.Keyboard{
 		Layout:  randomKeyboardlayout(),
-		Backlit: randomBacklitBoolean(),
+		Backlit: randomBool(),
 	}
+	return keyboard
 }
