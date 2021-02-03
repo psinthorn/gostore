@@ -13,7 +13,6 @@ message Memory {
         GIGABYTE =5;
         TERABYTE =6;
     }
-
     uint64 value =1;
     Unit unit =2;
 }
