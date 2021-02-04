@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
-	sample_data.randomCpuBrand()
+	fmt.Println("Implement data generator")
 }

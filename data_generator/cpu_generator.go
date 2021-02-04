@@ -2,6 +2,7 @@ package sample_data
 
 import "github.com/psinthorn/gostore/pb"
 
+// return new CPU object
 func NewCPU() *pb.CPU {
 	brand := randomCPUBrand()
 	model := randomCPUModel(brand)
@@ -21,6 +22,7 @@ func NewCPU() *pb.CPU {
 	return cpu
 }
 
+// return new GPU object
 func NewGPU() *pb.GPU {
 	brand := randomCPUBrand()
 	model := randomCPUModel(brand)

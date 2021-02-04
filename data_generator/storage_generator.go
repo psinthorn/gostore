@@ -2,6 +2,7 @@ package sample_data
 
 import "github.com/psinthorn/gostore/pb"
 
+// return new storage object
 func NewStorage() *pb.Storage {
 	storage := &pb.Storage{
 
