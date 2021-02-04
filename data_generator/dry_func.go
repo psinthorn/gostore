@@ -3,7 +3,7 @@ package sample_data
 import (
 	"math/rand"
 
-	"go.mongodb.org/mongo-driver/x/mongo/driver/uuid"
+	"github.com/google/uuid"
 )
 
 func randomStringFromSet(a ...string) string {
@@ -27,7 +27,7 @@ func randomFloat32(min, max float32) float32 {
 }
 
 func randomID() string {
-	return uuid.New
+	return uuid.New().String()
 }
 
 func randomLaptopBrand() string {
