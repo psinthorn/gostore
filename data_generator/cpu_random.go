@@ -35,7 +35,7 @@ func randomCPUModel(brand string) string {
 	default:
 		return randomStringFromSet(
 			"Xeon x-xxxxx",
-			"Core x-x-xxxxx"
+			"Core x-x-xxxxx",
 			"Ryzen x xx xxxxx",
 			"A13 xxxxxxx",
 			"T1 xxxxxxx",
@@ -58,8 +58,7 @@ func randomGPUModel(brand string) string {
 	}
 
 	return randomStringFromSet(
-		"Radeon™ RX 480 Graphics", 
+		"Radeon™ RX 480 Graphics",
 		"Radeon™ 540 Graphics",
 	)
 }
-
