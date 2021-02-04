@@ -6,7 +6,7 @@ import (
 	"github.com/psinthorn/gostore/pb"
 )
 
-func randomPanel() pb.Screen_Panel {
+func randomScreenPanel() pb.Screen_Panel {
 	switch rand.Intn(3) {
 	case 1:
 		return pb.Screen_IPS
@@ -17,6 +17,13 @@ func randomPanel() pb.Screen_Panel {
 	}
 }
 
-func randomResolution() pb.Screen_Resolution {
-	return pb.Screen_Resolution{}
+func randomScreenResolution() *pb.Screen_Resolution {
+	height := randomInt(1080, 4320)
+	width := height * 16 / 9
+	resolution := &pb.Screen_Resolution{
+		Width:  uint32(width),
+		Height: uint32(height),
+	}
+
+	return resolution
 }
