@@ -1,14 +1,5 @@
 package sample_data
 
-// // Move this function to dry_func.go
-// func randomStringFromSet(a ...string) string {
-// 	n := len(a)
-// 	if n == 0 {
-// 		return "UNKNOWN"
-// 	}
-// 	return a[rand.Intn(n)]
-// }
-
 // Random CPU Brand
 func randomCPUBrand() string {
 	return randomStringFromSet("Intel", "AMD", "Apple A13")

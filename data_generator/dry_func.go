@@ -2,6 +2,8 @@ package sample_data
 
 import (
 	"math/rand"
+
+	"go.mongodb.org/mongo-driver/x/mongo/driver/uuid"
 )
 
 func randomStringFromSet(a ...string) string {
@@ -22,4 +24,26 @@ func randomFloat64(min float64, max float64) float64 {
 
 func randomFloat32(min, max float32) float32 {
 	return min + rand.Float32()*(max-min)
+}
+
+func randomID() string {
+	return uuid.New
+}
+
+func randomLaptopBrand() string {
+	return randomStringFromSet("Apple", "Dell", "HP", "IBM")
+}
+
+func randomLaptopModel() string {
+	brand := randomLaptopBrand()
+	switch brand {
+	case "Apple":
+		return randomStringFromSet("Macbook Pro", "Macbook Air", "Macbook")
+	case "Dell":
+		return randomStringFromSet("XPS", "Latitude", "Precision 3560")
+	case "HP":
+		return randomStringFromSet("ProBook 635 Aero G7", "Pavilion", "Spectre x360")
+	default:
+		return "UNKNOWN"
+	}
 }
