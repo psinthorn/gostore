@@ -1,0 +1,56 @@
+{
+ "id": "68c4bb42-2c56-47e8-bb6b-21f05b78f917",
+ "brand": "HP",
+ "model": "Macbook",
+ "cpu": {
+  "brand": "Intel",
+  "model": "Core i-9-9980HK",
+  "numberCores": 5,
+  "numberThreads": 7,
+  "minGhz": 3.2673551503069413,
+  "maxGhz": 3.707403373077196
+ },
+ "memory": {
+  "value": "19",
+  "unit": 5
+ },
+ "gpus": [
+  {
+   "brand": "AMD",
+   "model": "Core i-3-1005G1",
+   "minGhz": 1.4821521657819658,
+   "maxGhz": 1.5379352521227008,
+   "memory": {
+    "value": "6",
+    "unit": 5
+   }
+  }
+ ],
+ "storages": [
+  {
+   "driver": 1,
+   "memory": {
+    "value": "5",
+    "unit": 5
+   }
+  }
+ ],
+ "screen": {
+  "sizeInch": 15,
+  "resolution": {
+   "width": 5760,
+   "height": 3240
+  },
+  "panel": 2,
+  "multitouch": false
+ },
+ "keyboard": {
+  "layout": 1,
+  "backlit": true
+ },
+ "weightKg": 1.7984331909330185,
+ "priceUsd": 2360,
+ "releaseYear": 2021,
+ "createdAt": "2021-02-04T08:41:30.052767900Z",
+ "updatedAt": "2021-02-04T08:41:30.052767900Z"
+}

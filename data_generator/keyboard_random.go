@@ -2,9 +2,17 @@ package sample_data
 
 import (
 	"math/rand"
+	"time"
 
 	"github.com/psinthorn/gostore/pb"
 )
+
+// by default random will use fix seed to create then some of random value will be remain the same
+// we can fix it by tell random to use diffenrent seed to run
+// by using below code
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 func randomKeyboardlayout() pb.Keyboard_Layout {
 

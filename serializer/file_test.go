@@ -13,14 +13,17 @@ import (
 func TestWriteProtobufToBinaryFile(t *testing.T) {
 	t.Parallel()
 
-	// test write protobuffer message to binary
+	// filename and path
 	binaryFile := "./../tmp/laptop.bin"
+	jsonfile := "./../tmp/laptop.json"
+
+	// test write protobuffer message to binary file
 	laptop1 := sample_data.NewLaptop()
 
 	err := serializer.WriteProtobufToBinaryFile(laptop1, binaryFile)
 	require.NoError(t, err)
 
-	// test read from binary to protobuffer message
+	// test read from binary and wrote to new protobuffer message
 	laptop2 := &pb.Laptop{}
 	err = serializer.ReadBinaryfileToProtoMessage(binaryFile, laptop2)
 	require.NoError(t, err)
@@ -28,6 +31,9 @@ func TestWriteProtobufToBinaryFile(t *testing.T) {
 	// test compare 2 files is equal
 	require.True(t, proto.Equal(laptop1, laptop2))
 
+	// test convert and write protobuffer message to json file
+	err = serializer.WrtiteProtobufToJsonFile(laptop2, jsonfile)
+	require.NoError(t, err)
 }
 
 func TestReadBinaryfileToProtoMessage(t *testing.T) {

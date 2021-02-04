@@ -13,11 +13,18 @@ gen-server:
 gen-client:
 	protoc --go_out=pb --go_opt=paths=source_relative     --go-grpc_out=pb --go-grpc_opt=paths=source_relative    client.proto 
 
-
-
 # for macOS
 clean: 
 	rm pb/*.go
+
+# to all test
+test:
+	go test -cover -race ./..
+
+#individual file test	
+testfile:
+	go test -cover -race file_test.go 
+
 
 
 # -------------------------------------------------------------------------
