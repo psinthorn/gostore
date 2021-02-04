@@ -1,5 +1,17 @@
 package sample_data
 
+import (
+	"math/rand"
+	"time"
+)
+
+// by default random will use fix seed to create then some of random value will be remain the same
+// we can fix it by tell random to use diffenrent seed to run
+// by using below code
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 // Random CPU Brand
 func randomCPUBrand() string {
 	return randomStringFromSet("Intel", "AMD", "Apple A13")
