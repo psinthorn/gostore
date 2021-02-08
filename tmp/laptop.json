@@ -1,27 +1,27 @@
 {
- "id": "68c4bb42-2c56-47e8-bb6b-21f05b78f917",
- "brand": "HP",
- "model": "Macbook",
+ "id": "d8e387f7-5a5f-49ae-ad50-9a4b6ddc825f",
+ "brand": "Dell",
+ "model": "Pavilion",
  "cpu": {
-  "brand": "Intel",
-  "model": "Core i-9-9980HK",
-  "numberCores": 5,
-  "numberThreads": 7,
-  "minGhz": 3.2673551503069413,
-  "maxGhz": 3.707403373077196
+  "brand": "AMD",
+  "model": "Ryzen 3 PRO 2300GE",
+  "numberCores": 4,
+  "numberThreads": 5,
+  "minGhz": 3.4067873394116615,
+  "maxGhz": 3.6187421568876155
  },
  "memory": {
-  "value": "19",
+  "value": "11",
   "unit": 5
  },
  "gpus": [
   {
    "brand": "AMD",
-   "model": "Core i-3-1005G1",
-   "minGhz": 1.4821521657819658,
-   "maxGhz": 1.5379352521227008,
+   "model": "Ryzen 7 PRO 2700U",
+   "minGhz": 1.1612876885376422,
+   "maxGhz": 1.6768917843778255,
    "memory": {
-    "value": "6",
+    "value": "5",
     "unit": 5
    }
   }
@@ -36,21 +36,21 @@
   }
  ],
  "screen": {
-  "sizeInch": 15,
+  "sizeInch": 29,
   "resolution": {
-   "width": 5760,
-   "height": 3240
+   "width": 6506,
+   "height": 3660
   },
-  "panel": 2,
+  "panel": 0,
   "multitouch": false
  },
  "keyboard": {
   "layout": 1,
   "backlit": true
  },
- "weightKg": 1.7984331909330185,
- "priceUsd": 2360,
- "releaseYear": 2021,
- "createdAt": "2021-02-04T08:41:30.052767900Z",
- "updatedAt": "2021-02-04T08:41:30.052767900Z"
+ "weightKg": 1.5070332598421323,
+ "priceUsd": 1783,
+ "releaseYear": 2018,
+ "createdAt": "2021-02-05T02:45:04.534377600Z",
+ "updatedAt": "2021-02-05T02:45:04.534377600Z"
 }
