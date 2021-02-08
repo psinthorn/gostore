@@ -23,7 +23,7 @@ test:
 
 #individual file test	
 testfile:
-	go test -cover -race file_test.go 
+	go test -cover -race ./serializer/file_test.go 
 
 
 
@@ -31,13 +31,6 @@ testfile:
 # Windows section
 # -------------------------------------------------------------------------
 
-# Generate protobuffer 
+# Generate protobuffer on windows 
 gen-win: 
-	protoc --proto_path=./protos ./protos/*.proto --go_out=./pb
-
-# Delete command line 
-del:
-	del pb\*.go
-
-
-
+	protoc --proto_path=./protos ./protos/*.proto --go_out=plugins=grpc:./pb
