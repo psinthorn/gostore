@@ -4,6 +4,17 @@
 run: 
 	go run main.go
 
+
+# run server command
+server: 
+	go run cmd/server/main.go
+
+
+# Run client command
+client: 
+	go run cmd/client/main.go
+
+
 # Generate Server 
 # consume we run command in the *.proto file directory 
 gen-server:
