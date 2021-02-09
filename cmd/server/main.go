@@ -3,5 +3,12 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Server start")
+
+	gRPCStart()
+}
+
+func gRPCStart() string {
+	startServer := "gRPC Server start"
+	fmt.Println("gRPC Server start")
+	return startServer
 }
