@@ -7,12 +7,12 @@ run:
 
 # run server command
 server: 
-	go run cmd/server/main.go
+	go run cmd/server/main.go -port 5051
 
 
 # Run client command
 client: 
-	go run cmd/client/main.go
+	go run cmd/client/main.go -port 0.0.0.0:5051
 
 
 # Generate Server 
