@@ -33,23 +33,45 @@ func main() {
 	// return response to req
 	// serve server
 
+	// Create new laptop
 	laptop := sample_data.NewLaptop()
+
+	// // to test new laptop with no id
+	// laptop.Id = ""
+
+	// // to test new laptop with invalid id
+	// laptop.Id = "invalid-uuid"
+
+	// // to test new laptop with existing id
+	// // you can copy and past to id value
+	// laptop.Id = "put-existing-id"
+
+	fmt.Println("------------------------------------------------------")
 	fmt.Println(laptop)
+	fmt.Println("------------------------------------------------------")
+
+	fmt.Println("------------------------------------------------------")
+	log.Printf("new laptop object with id %s ", laptop.Id)
+	fmt.Println("------------------------------------------------------")
+
+	// Create laptop request object
 	req := &pb.CreateLaptopRequest{
 		Laptop: laptop,
 	}
 
+	// return data from server
 	res, err := laptopClient.CreateLaptop(context.Background(), req)
 	if err != nil {
 		st, ok := status.FromError(err)
 		if ok && st.Code() == codes.AlreadyExists {
 			log.Fatal("Laptop is already exist")
 		} else {
-			log.Fatal("can't create laptop")
+			log.Fatal("can't create laptop", err)
 		}
 		return
 	}
-
-	log.Printf("create laptop with id %s ", res.Id)
+	fmt.Println("------------------------------------------------------")
+	log.Printf("laptop created and store in-memory with id %s ", res.Id)
+	fmt.Println("------------------------------------------------------")
 
 }

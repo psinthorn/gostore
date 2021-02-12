@@ -26,6 +26,7 @@ func (server *LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLapt
 
 	// รับค่าจาก req
 	newLaptop := req.GetLaptop()
+	fmt.Println("----------------------------------------------------------- ")
 	log.Printf("Receive a create-laptop request with ID: %s", newLaptop.Id)
 
 	// ตรวจสอบคค่าที่รับมาว่ามี id มาด้วยหรือไม่
@@ -58,6 +59,8 @@ func (server *LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLapt
 	}
 
 	// response กลับให้ client
+	log.Printf("Created laptop with id %s", res.Id)
+	fmt.Println("----------------------------------------------------------- ")
 	return res, nil
 
 	// Next is find the solution to store data to database
