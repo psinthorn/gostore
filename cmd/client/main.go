@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"time"
 
 	sample_data "github.com/psinthorn/gostore/data_generator"
 	"github.com/psinthorn/gostore/pb"
@@ -59,14 +60,18 @@ func main() {
 		Laptop: laptop,
 	}
 
+	// use context with timeout for make a connection
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
 	// return data from server
-	res, err := laptopClient.CreateLaptop(context.Background(), req)
+	res, err := laptopClient.CreateLaptop(ctx, req)
 	if err != nil {
 		st, ok := status.FromError(err)
 		if ok && st.Code() == codes.AlreadyExists {
 			log.Fatal("Laptop is already exist")
 		} else {
-			log.Fatal("can't create laptop", err)
+			log.Fatal("can't create laptop: ", err)
 		}
 		return
 	}
