@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/google/uuid"
 	"github.com/psinthorn/gostore/pb"
@@ -45,6 +46,21 @@ func (server *LaptopServer) CreateLaptop(ctx context.Context, req *pb.CreateLapt
 		}
 		// หากสร้างได้ให้กำหนด newLaptop.id = id ที่สร้างขึ้นมาใหม่
 		newLaptop.Id = id.String()
+	}
+
+	// ตั้งเวลาเพื่อทดสอบ deadline exceeded
+	time.Sleep(6 * time.Second)
+
+	// ตรวจสอบหากใช้เวลาในการเชื่อมต่อเกินกำหนดให้ return error
+	// log.Print(ctx.Err())
+	if ctx.Err() == context.Canceled {
+		log.Println("request is canceled")
+		return nil, status.Error(codes.Canceled, "request is canceled")
+	}
+
+	if ctx.Err() == context.DeadlineExceeded {
+		log.Println("deadline is exceeded")
+		return nil, status.Error(codes.DeadlineExceeded, "deadline is exceeded")
 	}
 
 	// Save new Laptop to in memory
